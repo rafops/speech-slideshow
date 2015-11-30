@@ -1,0 +1,17 @@
+{
+  "name": "srslideshow",
+  "version": "1.0.0",
+  "description": "Speech Recognition Slide Show",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "engines": {
+    "node": "5.1.10"
+  },
+  "author": "Rafael Moraes",
+  "license": "ISC"
+}
