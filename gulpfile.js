@@ -8,6 +8,7 @@ var gulp = require('gulp'),
 gulp.task('scripts', function() {
   gulp.src([
     'node_modules/annyang/annyang.min.js',
+    'node_modules/reveal.js/js/reveal.js',
     'src/scripts/**/*.js'
   ]).pipe(concat('main.js'))
     .pipe(gulp.dest('public/assets/js'))
@@ -17,7 +18,11 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('styles', function() {
-  return gulp.src('src/styles/**/*.css')
+  return gulp.src([
+    'node_modules/reveal.js/css/reveal.css',
+    'node_modules/reveal.js/css/theme/simple.css',
+    'src/styles/**/*.css'
+  ]).pipe(concat('main.css'))
     .pipe(gulp.dest('public/assets/css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
