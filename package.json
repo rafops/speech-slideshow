@@ -4,6 +4,10 @@
   "description": "Speech Recognition Slide Show",
   "author": "Rafael Moraes",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lememora/srslideshow.git"
+  },
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -12,6 +16,7 @@
     "express": "^4.13.3"
   },
   "devDependencies": {
+    "annyang": "github:talater/annyang",
     "del": "^2.1.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",

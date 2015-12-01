@@ -6,8 +6,10 @@ var gulp = require('gulp'),
     del = require('del');
 
 gulp.task('scripts', function() {
-  return gulp.src('src/scripts/**/*.js')
-    .pipe(concat('main.js'))
+  gulp.src([
+    'node_modules/annyang/annyang.min.js',
+    'src/scripts/**/*.js'
+  ]).pipe(concat('main.js'))
     .pipe(gulp.dest('public/assets/js'))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
@@ -29,6 +31,11 @@ gulp.task('clean', function() {
   ]);
 });
 
+gulp.task('watch', function() {
+  gulp.watch('src/scripts/**/*.js', ['scripts']);
+  gulp.watch('src/styles/**/*.css', ['styles']);
+});
+
 gulp.task('default', ['clean'], function() {
-  gulp.start('scripts', 'styles');
+  gulp.start('scripts', 'styles', 'watch');
 });
